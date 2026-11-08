@@ -1,0 +1,12 @@
+public class DlNode <T extends Comparable<T>> extends ListNode<T extends Comparable<T>>
+{
+  private ListNode<T> prev;
+
+  DlNode(ListNode<T> prev, ListNode<T> next, T val)
+  {
+    super(next, val);
+    this.prev = prev;
+  } 
+
+
+}
