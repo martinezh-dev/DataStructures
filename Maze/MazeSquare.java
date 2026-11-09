@@ -44,7 +44,11 @@ public class MazeSquare
     {
         this.status = status;
     }
-
+    public void reset()
+    {
+        setStatus((char)0);
+    }
+    
     public String toString()
     {
         return (char)(type + 48) + "";
