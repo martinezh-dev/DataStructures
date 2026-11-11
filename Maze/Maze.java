@@ -51,8 +51,10 @@ public class Maze
             }
             row++;
         }
+        scan.close();
         return true;
     }
+
 
     public ArrayList<MazeSquare> getNeighbors(MazeSquare sq)
     {

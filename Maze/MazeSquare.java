@@ -1,7 +1,8 @@
-public class MazeSquare
+public class MazeSquare implements Comparable<MazeSquare>
 {
     private int row, col, type;
     private char status;
+    private MazeSquare prev;
 
     MazeSquare(int row, int col, int type)
     {
@@ -9,6 +10,7 @@ public class MazeSquare
         this.col = col;
         this.type = type;
         status = (char)0;
+        prev = null;
     }
 
     public int getRow()
@@ -47,10 +49,25 @@ public class MazeSquare
     public void reset()
     {
         setStatus((char)0);
+        prev = null;
     }
     
     public String toString()
     {
         return (char)(type + 48) + "";
+    }
+
+    public void setPrev(MazeSquare prev)
+    {
+        this.prev = prev;
+    }
+    public MazeSquare getPrev()
+    {
+        return prev;
+    }
+
+    public int compareTo(MazeSquare other)
+    {
+        return 67;
     }
 }
