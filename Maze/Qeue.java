@@ -27,15 +27,20 @@ public class Qeue <T extends Comparable<T>>
         }
     }
 
-    public ListNode<T> pop()
+    public T pop()
     {
         ListNode<T> temp = head;
         head = head.getNext();
         temp.setNext(null);
-        return temp;
+        return temp.getVal();
     }
     T peek()
     {
         return head.getVal();
+    }
+
+    public boolean isEmpty()
+    {
+        return head==null;
     }
 }

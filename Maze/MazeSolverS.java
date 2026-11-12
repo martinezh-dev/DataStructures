@@ -1,10 +1,11 @@
 import java.util.ArrayList;
 
-public class MazeSolver
+public class MazeSolverS
 {
     private Maze maze;
     private Stack<MazeSquare> worklist;
     private boolean solved;
+    private String pathString;
 
     public void makeEmpty()
     {
@@ -23,23 +24,22 @@ public class MazeSolver
     {
         return worklist.pop();
     }
-    public MazeSolver(Maze maze)
+    public MazeSolverS(Maze maze)
     {
         this.maze = maze;
         makeEmpty();
         add(maze.getStart());
         solved = false;
     }
-    //TODO: implement this
     public boolean isSolved()
     {
         return solved;
     }
-    public String getPath()
+    public boolean getPath()
     {
         if(!solved)
         {
-            return "Maze Not Solved";
+            return false;
         }
         MazeSquare cur = maze.getFinish();
         String ret = "";
@@ -49,7 +49,13 @@ public class MazeSolver
             ret += ("(" + cur.getRow() + ", " + cur.getCol() + ")");
             cur = cur.getPrev();
         }
-        return ret;
+        pathString = ret;
+        return true;
+    }
+
+    public String getPathString()
+    {
+        return pathString;
     }
 
     public MazeSquare step()
@@ -58,11 +64,8 @@ public class MazeSolver
         if(!worklist.isEmpty())
         {
             cur = worklist.pop();
-            if(cur.getType() == 3)
-            {
-                System.out.println(getPath());
-            }
-            else
+            
+            if(cur.getType() != 3)
             {
                 ArrayList<MazeSquare> adj = maze.getNeighbors(cur);
                 for(MazeSquare sq : adj)

@@ -10,10 +10,21 @@ public class MazeClient
         try
         {
             myMaze.loadMaze("source.mz");
-            MazeSolver solver = new MazeSolver(myMaze);
-            //System.out.println(myMaze.getStart());
-            solver.solve();
-            System.out.println(solver.getPath());
+            MazeSolverS solverS = new MazeSolverS(myMaze);
+            
+            MazeSolverQ solverQ = new MazeSolverQ(myMaze);
+            solverS.solve();
+            System.out.println(solverS.isSolved());
+            solverS.getPath();
+
+            myMaze.reset();
+
+            solverQ.solve();
+            System.out.println(solverS.getPath());
+            solverQ.getPath();
+
+            System.out.println(solverQ.getPathString());
+            System.out.println(solverS.getPathString());
         }catch (FileNotFoundException e)
         {System.out.println("File Not Found");}
     }
