@@ -22,13 +22,22 @@ public class Maze
 
         if(scan.hasNext())
         {
+            try
+            {
             int rows = Integer.parseInt(scan.next());
             int cols = Integer.parseInt(scan.next());
             maze = new MazeSquare[rows][cols];
             scan.nextLine();
+            }catch(NumberFormatException e)
+            {
+                System.out.println("Invalid input");
+                scan.close();
+                return false;
+            }
         }
         else
         {
+            scan.close();
             return false;
         }
 
@@ -39,6 +48,8 @@ public class Maze
             String[] parts = curLine.split(" ");
             for(int i = 0; i < parts.length; i++)
             {
+                try
+                {
                 maze[row][i] = new MazeSquare(row, i, Integer.parseInt(parts[i]));
                 if(Integer.parseInt(parts[i]) == 2)
                 {
@@ -47,6 +58,12 @@ public class Maze
                 if(Integer.parseInt(parts[i]) == 3)
                 {
                     finish = maze[row][i];
+                }
+                }catch(NumberFormatException e)
+                {
+                    System.out.println("invalid input");
+                    scan.close();
+                    return false;
                 }
             }
             row++;

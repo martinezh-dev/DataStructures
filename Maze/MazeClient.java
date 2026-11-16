@@ -9,22 +9,28 @@ public class MazeClient
 
         try
         {
-            myMaze.loadMaze("source.mz");
-            MazeSolverS solverS = new MazeSolverS(myMaze);
-            
-            MazeSolverQ solverQ = new MazeSolverQ(myMaze);
-            solverS.solve();
-            System.out.println(solverS.isSolved());
-            solverS.getPath();
+            if(myMaze.loadMaze("source.mz"))
+            {
+                MazeSolverS solverS = new MazeSolverS(myMaze);
+                
+                MazeSolverQ solverQ = new MazeSolverQ(myMaze);
+                solverS.solve();
+                System.out.println(solverS.isSolved());
+                solverS.getPath();
 
-            myMaze.reset();
+                myMaze.reset();
 
-            solverQ.solve();
-            System.out.println(solverS.getPath());
-            solverQ.getPath();
+                solverQ.solve();
+                System.out.println(solverS.getPath());
+                solverQ.getPath();
 
-            System.out.println(solverQ.getPathString());
-            System.out.println(solverS.getPathString());
+                System.out.println(solverQ.getPathString());
+                System.out.println(solverS.getPathString());
+            }
+            else
+            {
+                System.out.println("Failed to load Maze");
+            }
         }catch (FileNotFoundException e)
         {System.out.println("File Not Found");}
     }
