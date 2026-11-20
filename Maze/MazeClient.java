@@ -11,17 +11,15 @@ public class MazeClient
         {
             if(myMaze.loadMaze("source.mz"))
             {
-                MazeSolverS solverS = new MazeSolverS(myMaze);
+                MSS solverS = new MSS(myMaze);
                 
-                MazeSolverQ solverQ = new MazeSolverQ(myMaze);
+                MSQ solverQ = new MSQ(myMaze);
                 solverS.solve();
-                System.out.println(solverS.isSolved());
                 solverS.getPath();
 
                 myMaze.reset();
 
                 solverQ.solve();
-                System.out.println(solverS.getPath());
                 solverQ.getPath();
 
                 System.out.println(solverQ.getPathString());
