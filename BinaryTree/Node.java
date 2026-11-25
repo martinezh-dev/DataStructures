@@ -33,4 +33,9 @@ public class Node <E extends Comparable<E>>
     {
         right = nRight;
     }
+
+    public String toString()
+    {
+        return value.toString();
+    }
 }
