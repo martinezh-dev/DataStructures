@@ -36,9 +36,19 @@ public class BTree <E extends Comparable<E>>
         cur = root;
     }
 
-    public void traverse()
+    public void inOrder()
     {
-        root.traverse();
+        root.inOrder();
+        System.out.println();
+    }
+    public void preOrder()
+    {
+        root.preOrder();
+        System.out.println();
+    }
+    public void postOrder()
+    {
+        root.postOrder();
         System.out.println();
     }
 }

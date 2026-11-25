@@ -61,16 +61,43 @@ public class Node <E extends Comparable<E>>
     }
 
     //left child, parent, right child
-    public void traverse()
+    public void inOrder()
     {
         if(left != null)
         {
-            left.traverse();
+            left.inOrder();
         }
         System.out.print(value.toString());
         if(right != null)
         {
-            right.traverse();
+            right.inOrder();
         }
+    }
+
+    public void preOrder()
+    {
+        System.out.print(value);
+        if(left != null)
+        {
+            left.preOrder();
+        }
+        if(right != null)
+        {
+            right.preOrder();
+        }
+    }
+
+    public void postOrder()
+    {
+        if(left != null)
+        {
+            left.postOrder();
+        }
+        if(right != null)
+        {
+            right.postOrder();
+        }
+
+        System.out.print(value);
     }
 }

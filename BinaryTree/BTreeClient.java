@@ -9,6 +9,14 @@ public class BTreeClient
         myTree.add(7);
         myTree.add(5);
 
-        myTree.traverse();
+        System.out.println("inOrder: ");
+        myTree.inOrder();
+
+        System.out.println("\npostOrder: ");
+        myTree.postOrder();
+
+        System.out.println("\npreOrder: ");
+        myTree.preOrder();
+
     }
 }
