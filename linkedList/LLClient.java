@@ -5,7 +5,6 @@ Last Update: 9/15/26
 A client class to test methods of the Linked List and List Node classes
 and implements those classes and methods with SimpleDate class
 */
-import java.util.Scanner;
 import java.io.*;
 
 public class LLClient
@@ -38,7 +37,6 @@ public class LLClient
     System.out.println(ll);
     System.out.println(ll.size());
     System.out.println(deleted.getNext());*/
-    
   }
 }
     

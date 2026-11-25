@@ -39,8 +39,9 @@ public class Node <E extends Comparable<E>>
         return value.toString();
     }
 
-    public void add(E newKey)
+    public int add(E newKey, int curLevel)
     {
+        curLevel++;
         Node<E> next = advance(newKey.compareTo(value) <= 0);
 
         if(next == null)
@@ -53,10 +54,11 @@ public class Node <E extends Comparable<E>>
             {
                 right = new Node<E>(null, null, newKey);
             }
+            return curLevel;
         }
         else
         {
-            next.add(newKey);
+            return next.add(newKey, curLevel);
         }
     }
 

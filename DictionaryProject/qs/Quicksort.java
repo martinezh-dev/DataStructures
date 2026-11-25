@@ -67,6 +67,7 @@ public class Quicksort
 
     qs(input, ogLead, trail-1);
     qs(input, trail+1, lead);
+    scan.close();
   }
 
   public static void qss(ArrayList<String> input, int lead, int pivIndex)
@@ -114,6 +115,7 @@ public class Quicksort
 
     qss(input, ogLead, trail-1);
     qss(input, trail+1, lead);
+    scan.close();
   }
 
   public static void main(String[] args)

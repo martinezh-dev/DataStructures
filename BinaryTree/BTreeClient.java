@@ -5,9 +5,9 @@ public class BTreeClient
         BTree<Integer> myTree = new BTree<Integer>();
 
         myTree.add(3);
-        myTree.add(2);
-        myTree.add(7);
-        myTree.add(5);
+        //myTree.add(2);
+        //myTree.add(7);
+       // myTree.add(5);
 
         System.out.println("inOrder: ");
         myTree.inOrder();
@@ -17,6 +17,8 @@ public class BTreeClient
 
         System.out.println("\npreOrder: ");
         myTree.preOrder();
+
+        System.out.println("Levels: " + myTree.getLevels());
 
     }
 }

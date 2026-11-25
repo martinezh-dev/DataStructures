@@ -136,7 +136,7 @@ public int size()
       }
       else if(cur == null)
       {
-        cur.setNext(new ListNode<T>(value, null));
+        prev.setNext(new ListNode<T>(value, null));
         inserted = true;
       }
       else

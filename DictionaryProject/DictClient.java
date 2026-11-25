@@ -78,5 +78,6 @@ public class DictClient
     {
       System.out.println(dict2.getByIndex(i));
     }
+    scan.close();
   }
 }
