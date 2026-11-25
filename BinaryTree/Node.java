@@ -38,4 +38,25 @@ public class Node <E extends Comparable<E>>
     {
         return value.toString();
     }
+
+    public void add(E newKey)
+    {
+        Node<E> next = advance(newKey.compareTo(value) <= 0);
+
+        if(next == null)
+        {
+            if(newKey.compareTo(value) <= 0)
+            {
+                left = new Node<E>(null, null, newKey);
+            }
+            else
+            {
+                right = new Node<E>(null, null, newKey);
+            }
+        }
+        else
+        {
+            next.add(newKey);
+        }
+    }
 }
