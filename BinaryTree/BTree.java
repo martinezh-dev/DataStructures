@@ -30,4 +30,15 @@ public class BTree <E extends Comparable<E>>
         cur = cur.advance(goLeft);
         return (cur == null) ? null : cur.getVal();
     }
+
+    public void reset()
+    {
+        cur = root;
+    }
+
+    public void traverse()
+    {
+        root.traverse();
+        System.out.println();
+    }
 }

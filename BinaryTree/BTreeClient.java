@@ -9,8 +9,6 @@ public class BTreeClient
         myTree.add(7);
         myTree.add(5);
 
-        myTree.advance(false);
-        myTree.advance(true);
-        System.out.println("right left Value: " + myTree);
+        myTree.traverse();
     }
 }

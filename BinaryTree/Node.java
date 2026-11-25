@@ -59,4 +59,18 @@ public class Node <E extends Comparable<E>>
             next.add(newKey);
         }
     }
+
+    //left child, parent, right child
+    public void traverse()
+    {
+        if(left != null)
+        {
+            left.traverse();
+        }
+        System.out.print(value.toString());
+        if(right != null)
+        {
+            right.traverse();
+        }
+    }
 }
